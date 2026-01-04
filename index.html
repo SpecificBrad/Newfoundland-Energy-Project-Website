@@ -6,7 +6,7 @@
             <title>Newfoundland Energy Transformation</title>
         <!-- Tailwind CSS CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Chart.js CDN -->
+        <!-- Chart.js CDN - Load first before custom scripts -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.0/dist/chart.umd.min.js"></script>
         <!-- Leaflet.js CDN for Interactive Map -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
@@ -27,7 +27,7 @@
                         
                         <!-- Navigation Menu -->
                         <nav class="hidden md:flex space-x-8 items-center">
-                                        <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>a>
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>a>
                                         <a href="#plan" class="text-gray-600 hover:text-blue-600 transition">The Plan</a>a>
                                         <a href="#financials" class="text-gray-600 hover:text-blue-600 transition">Financials</a>a>
                                         <a href="#infrastructure" class="text-gray-600 hover:text-blue-600 transition">Infrastructure</a>a>
@@ -287,7 +287,7 @@
                                                                             <div class="space-y-8">
                                                                                                         <div class="bg-white rounded-lg p-6 shadow-lg">
                                                                                                                                         <h4 class="text-lg font-bold text-gray-900 mb-2">📍 Location</h4>h4>
-                                                                                                                                        <p class="text-gray-700">St. John's, Newfoundland and Labrador, Canada</p>
+                                                                                                                                        <p class="text-gray-700">St. John's, Newfoundland and Labrador, Canada</p>p>
                                                                                                             </div>
                                                                                                         <div class="bg-white rounded-lg p-6 shadow-lg">
                                                                                                                                         <h4 class="text-lg font-bold text-gray-900 mb-2">📧 Email</h4>h4>
@@ -355,7 +355,8 @@
                     </div>
         </footer>footer>
 
-    <!-- JavaScript Files - All functionality preserved -->
+    <!-- JavaScript Files - Load after all DOM elements and external libraries are ready -->
+    <!-- Ensure Chart.js and Leaflet are loaded before custom scripts -->
     <script src="roadmap.js"></script>
     <script src="charts.js"></script>
     <script src="js/map.js"></script>
