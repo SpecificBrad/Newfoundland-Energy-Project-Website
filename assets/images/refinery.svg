@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <!-- SVG: Oil Refinery Illustration
+         Usage: Insert into modal popups, facility pages, or Leaflet popups
+         Example: <img src="assets/images/refinery.svg" alt="Refinery" style="width: 300px;"/>
+         Responsive: Will scale to container width
+         Colors: Green palette (#1a472a, #2d5a3d, #a8d5ba) -->
+
+    <defs>
+          <linearGradient id="refinery-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#2d5a3d;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#1a472a;stop-opacity:1" />
+          </linearGradient>
+          <linearGradient id="tank-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#a8d5ba;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#2d5a3d;stop-opacity:1" />
+          </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="400" height="300" fill="#f0f4f1"/>
+
+    <!-- Ground -->
+    <rect y="240" width="400" height="60" fill="#a8d5ba"/>
+
+    <!-- Refinery Towers -->
+    <!-- Tower 1 (tall distillation tower) -->
+    <rect x="30" y="80" width="35" height="160" fill="url(#refinery-gradient)" stroke="#1a472a" stroke-width="2"/>
+    <circle cx="47.5" cy="75" r="20" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <rect x="42" y="70" width="11" height="10" fill="#1a472a"/>
+    <circle cx="47.5" cy="60" r="8" fill="#a8d5ba" stroke="#1a472a" stroke-width="1"/>
+
+    <!-- Tower 2 (medium tower) -->
+    <rect x="85" y="110" width="30" height="130" fill="url(#refinery-gradient)" stroke="#1a472a" stroke-width="2"/>
+    <circle cx="100" cy="105" r="18" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <rect x="95" y="100" width="10" height="8" fill="#1a472a"/>
+    <circle cx="100" cy="92" r="7" fill="#a8d5ba" stroke="#1a472a" stroke-width="1"/>
+
+    <!-- Tower 3 (short tower) -->
+    <rect x="140" y="140" width="28" height="100" fill="url(#refinery-gradient)" stroke="#1a472a" stroke-width="2"/>
+    <circle cx="154" cy="135" r="16" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <rect x="150" y="130" width="8" height="7" fill="#1a472a"/>
+    <circle cx="154" cy="123" r="6" fill="#a8d5ba" stroke="#1a472a" stroke-width="1"/>
+
+    <!-- Storage Tanks -->
+    <!-- Tank 1 -->
+    <ellipse cx="250" cy="185" rx="35" ry="15" fill="url(#tank-gradient)" stroke="#1a472a" stroke-width="2"/>
+    <rect x="215" y="185" width="70" height="55" fill="#a8d5ba" stroke="#1a472a" stroke-width="2"/>
+    <ellipse cx="250" cy="240" rx="35" ry="15" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <line x1="220" y1="190" x2="220" y2="235" stroke="#1a472a" stroke-width="1"/>
+    <line x1="280" y1="190" x2="280" y2="235" stroke="#1a472a" stroke-width="1"/>
+
+    <!-- Tank 2 -->
+    <ellipse cx="330" cy="175" rx="30" ry="12" fill="url(#tank-gradient)" stroke="#1a472a" stroke-width="2"/>
+    <rect x="300" y="175" width="60" height="45" fill="#a8d5ba" stroke="#1a472a" stroke-width="2"/>
+    <ellipse cx="330" cy="220" rx="30" ry="12" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <line x1="305" y1="180" x2="305" y2="215" stroke="#1a472a" stroke-width="1"/>
+    <line x1="355" y1="180" x2="355" y2="215" stroke="#1a472a" stroke-width="1"/>
+
+    <!-- Pipelines connecting components -->
+    <!-- Pipeline from tower 1 to tank 1 -->
+    <path d="M 65 200 Q 150 210 215 200" stroke="#1a472a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="90" cy="205" r="2" fill="#2d5a3d"/>
+    <circle cx="140" cy="212" r="2" fill="#2d5a3d"/>
+
+    <!-- Pipeline from tower 2 to tank 2 -->
+    <path d="M 115 190 Q 220 160 300 175" stroke="#1a472a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="150" cy="180" r="2" fill="#2d5a3d"/>
+    <circle cx="250" cy="165" r="2" fill="#2d5a3d"/>
+
+    <!-- Pipeline from tower 3 to tank 1 -->
+    <path d="M 168 180 Q 200 190 215 185" stroke="#1a472a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Smoke/Emissions stacks -->
+    <line x1="47.5" y1="75" x2="50" y2="50" stroke="#1a472a" stroke-width="2"/>
+    <line x1="100" y1="105" x2="98" y2="80" stroke="#1a472a" stroke-width="2"/>
+    <line x1="154" y1="135" x2="156" y2="110" stroke="#1a472a" stroke-width="2"/>
+
+    <!-- Smoke puffs -->
+    <circle cx="50" cy="45" r="4" fill="#2d5a3d" opacity="0.6"/>
+    <circle cx="48" cy="40" r="3" fill="#a8d5ba" opacity="0.4"/>
+    <circle cx="98" cy="75" r="3" fill="#2d5a3d" opacity="0.5"/>
+    <circle cx="156" cy="105" r="3" fill="#2d5a3d" opacity="0.5"/>
+
+    <!-- Support structures -->
+    <line x1="25" y1="240" x2="30" y2="80" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+    <line x1="65" y1="240" x2="60" y2="80" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+    <line x1="80" y1="240" x2="85" y2="110" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+    <line x1="120" y1="240" x2="115" y2="110" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+    <line x1="135" y1="240" x2="140" y2="140" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+    <line x1="168" y1="240" x2="168" y2="140" stroke="#1a472a" stroke-width="2" opacity="0.5"/>
+
+    <!-- Equipment indicators -->
+    <rect x="220" y="150" width="8" height="8" fill="#1a472a" stroke="#a8d5ba" stroke-width="1"/>
+    <rect x="305" y="140" width="8" height="8" fill="#1a472a" stroke="#a8d5ba" stroke-width="1"/>
+    <rect x="360" y="160" width="8" height="8" fill="#1a472a" stroke="#a8d5ba" stroke-width="1"/>
+</svg>
