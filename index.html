@@ -4,19 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Newfoundland Energy Transformation</title>
-      
-      <!-- Main Stylesheet -->
       <link rel="stylesheet" href="style.css">
-      
-      <!-- Chart.js CDN -->
       <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-      
-      <!-- Leaflet.js CDN for Interactive Map -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
       <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
   </head>
 <body>
-      <!-- Header Navigation -->
       <header>
                 <div class="container">
                               <div class="header-content">
@@ -34,10 +27,7 @@
                               </div>div>
                 </div>div>
       </header>
-
-    <!-- Main Content -->
     <main>
-              <!-- Hero Section: 20-Year Roadmap -->
               <section class="hero" id="home">
                             <div class="container">
                                               <div class="hero-content">
@@ -49,8 +39,6 @@
                                               </div>div>
                             </div>div>
               </section>section>
-
-              <!-- The Plan Section -->
               <section class="intro" id="plan">
                             <div class="container">
                                               <h2>The Plan</h2>
@@ -75,14 +63,10 @@
                                             </div>div>
                             </div>div>
               </section>section>
-    
-            <!-- Financials Section with Interactive Charts -->
             <section class="financials" id="financials">
                         <div class="container">
                                         <h2>Financials</h2>
                                         <p>Detailed financial projections and investment opportunities for the Newfoundland Energy Transformation project, with transparent cost and revenue impact analysis.</p>
-                                        
-                                        <!-- Scenario Selector -->
                                         <div class="scenario-controls">
                                                             <label for="scenarioSelect">Market Capture Scenario:</label>label>
                                                             <select id="scenarioSelect" class="scenario-selector">
@@ -91,13 +75,9 @@
                                                                                     <option value="100">100% Market Capture</option>option>
                                                             </select>select>
                                         </div>div>
-                                        
-                                        <!-- Financial Chart -->
                                         <div class="chart-container">
                                                             <canvas id="financialChart"></canvas>canvas>
                                         </div>div>
-                                        
-                                        <!-- Financial Summary -->
                                         <div class="financial-summary" id="financialSummary">
                                                             <div class="summary-card">
                                                                                     <h4>Total Revenue (20 Years)</h4>
@@ -118,17 +98,11 @@
                                         </div>div>
                         </div>div>
             </section>section>
-    
-            <!-- Infrastructure Section with Interactive Map -->
             <section class="infrastructure" id="infrastructure">
                         <div class="container">
                                         <h2>Infrastructure</h2>
                                         <p>Key infrastructure developments and projects supporting our energy transformation goals, including pipeline completion, marine facilities, and storage expansion.</p>
-                                        
-                                        <!-- Interactive Leaflet Map -->
                                         <div id="infrastructureMap" class="infrastructure-map"></div>div>
-                                        
-                                        <!-- Infrastructure Details Grid -->
                                         <div class="infrastructure-details">
                                                             <div class="infra-card">
                                                                                     <h4>Come By Chance Refinery</h4>
@@ -149,8 +123,6 @@
                                         </div>div>
                         </div>div>
             </section>section>
-    
-            <!-- Impact Section -->
             <section class="impact" id="impact">
                         <div class="container">
                                         <h2>Impact</h2>
@@ -175,8 +147,6 @@
                                         </div>div>
                         </div>div>
             </section>section>
-    
-            <!-- Contact Section -->
             <section class="contact" id="contact">
                         <div class="container">
                                         <h2>Contact</h2>
@@ -205,14 +175,12 @@
                                                                                                                 <label for="message">Message</label>label>
                                                                                                                 <textarea id="message" name="message" rows="5" required></textarea>
                                                                                       </div>div>
-                                                                                    <button type="submit" class="btn-submit">Send Message</button>button>
+                                                                                    <button type="submit" class="btn-submit">Send Message</button>
                                                             </form>form>
                                         </div>div>
                         </div>div>
             </section>section>
     </main>
-
-    <!-- Footer -->
     <footer>
               <div class="container">
                             <div class="footer-content">
@@ -247,23 +215,14 @@
                             </div>div>
               </div>div>
     </footer>
-
-    <!-- Modal for Infrastructure Details -->
     <div id="infraModal" class="modal">
             <div class="modal-content">
                         <span class="close">&times;</span>span>
                         <div id="modalBody"></div>div>
             </div>div>
     </div>div>
-
-    <!-- Scripts -->
-    <!-- Roadmap Chart -->
     <script src="roadmap.js"></script>
-
-    <!-- Financial Charts with Scenario Selection -->
     <script src="charts.js"></script>
-
-    <!-- Interactive Infrastructure Map -->
     <script src="js/map.js"></script>
 </body>
 </html>html></p>
