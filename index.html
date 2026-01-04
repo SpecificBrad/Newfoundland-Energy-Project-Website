@@ -4,11 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Newfoundland Energy Transformation</title>
+      
+      <!-- Main Stylesheet -->
       <link rel="stylesheet" href="style.css">
+      
       <!-- Chart.js CDN -->
       <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+      
+      <!-- Leaflet.js CDN for Interactive Map -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
   </head>
 <body>
+      <!-- Header Navigation -->
       <header>
                 <div class="container">
                               <div class="header-content">
@@ -27,85 +35,241 @@
                 </div>div>
       </header>
 
+    <!-- Main Content -->
     <main>
+              <!-- Hero Section: 20-Year Roadmap -->
               <section class="hero" id="home">
                             <div class="container">
                                               <div class="hero-content">
                                                                     <h2>20-Year Energy Roadmap</h2>
                                                                     <p class="hero-subtitle">Building a Sustainable Energy Future for Newfoundland</p>p>
                                                                     <div id="roadmapContainer" class="roadmap-container">
-                                                                                              <!-- Chart will be inserted here -->
                                                                                               <canvas id="roadmapChart"></canvas>canvas>
                                                                     </div>div>
                                               </div>div>
                             </div>div>
               </section>section>
 
+              <!-- The Plan Section -->
               <section class="intro" id="plan">
                             <div class="container">
                                               <h2>The Plan</h2>
                                               <p>Our comprehensive strategy to transform Newfoundland's energy sector over the next two decades, encompassing debt repayment, infrastructure expansion, and technology integration.</p>
+                                            <div class="phases-grid">
+                                                                <div class="phase-card">
+                                                                                        <h3>Debt Repayment</h3>
+                                                                                        <p>Years 1-5: Strategic financial management to reduce initial project debt obligations.</p>
+                                                                </div>div>
+                                                                <div class="phase-card">
+                                                                                        <h3>Infrastructure Expansion</h3>
+                                                                                        <p>Years 3-12: Significant capital investment in pipelines, terminals, and facilities.</p>
+                                                                </div>div>
+                                                                <div class="phase-card">
+                                                                                        <h3>Technology Integration</h3>
+                                                                                        <p>Years 5-15: Cutting-edge technology adoption for efficiency and sustainability.</p>
+                                                                </div>div>
+                                                                <div class="phase-card">
+                                                                                        <h3>Market Expansion</h3>
+                                                                                        <p>Years 10-20: Strategic global market positioning and revenue optimization.</p>
+                                                                </div>div>
+                                            </div>div>
                             </div>div>
               </section>section>
     
+            <!-- Financials Section with Interactive Charts -->
             <section class="financials" id="financials">
                         <div class="container">
                                         <h2>Financials</h2>
                                         <p>Detailed financial projections and investment opportunities for the Newfoundland Energy Transformation project, with transparent cost and revenue impact analysis.</p>
+                                        
+                                        <!-- Scenario Selector -->
+                                        <div class="scenario-controls">
+                                                            <label for="scenarioSelect">Market Capture Scenario:</label>label>
+                                                            <select id="scenarioSelect" class="scenario-selector">
+                                                                                    <option value="50">50% Market Capture</option>option>
+                                                                                    <option value="75" selected>75% Market Capture</option>option>
+                                                                                    <option value="100">100% Market Capture</option>option>
+                                                            </select>select>
+                                        </div>div>
+                                        
+                                        <!-- Financial Chart -->
+                                        <div class="chart-container">
+                                                            <canvas id="financialChart"></canvas>canvas>
+                                        </div>div>
+                                        
+                                        <!-- Financial Summary -->
+                                        <div class="financial-summary" id="financialSummary">
+                                                            <div class="summary-card">
+                                                                                    <h4>Total Revenue (20 Years)</h4>
+                                                                                    <p id="totalRevenue" class="metric">$0M</p>
+                                                            </div>div>
+                                                            <div class="summary-card">
+                                                                                    <h4>Total Costs</h4>
+                                                                                    <p id="totalCosts" class="metric">$0M</p>
+                                                            </div>div>
+                                                            <div class="summary-card">
+                                                                                    <h4>Net Profit</h4>
+                                                                                    <p id="netProfit" class="metric">$0M</p>
+                                                            </div>div>
+                                                            <div class="summary-card">
+                                                                                    <h4>ROI</h4>
+                                                                                    <p id="roi" class="metric">0%</p>
+                                                            </div>div>
+                                        </div>div>
                         </div>div>
             </section>section>
     
+            <!-- Infrastructure Section with Interactive Map -->
             <section class="infrastructure" id="infrastructure">
                         <div class="container">
                                         <h2>Infrastructure</h2>
                                         <p>Key infrastructure developments and projects supporting our energy transformation goals, including pipeline completion, marine facilities, and storage expansion.</p>
+                                        
+                                        <!-- Interactive Leaflet Map -->
+                                        <div id="infrastructureMap" class="infrastructure-map"></div>div>
+                                        
+                                        <!-- Infrastructure Details Grid -->
+                                        <div class="infrastructure-details">
+                                                            <div class="infra-card">
+                                                                                    <h4>Come By Chance Refinery</h4>
+                                                                                    <p>Primary crude oil refinery with advanced processing capabilities.</p>
+                                                            </div>div>
+                                                            <div class="infra-card">
+                                                                                    <h4>Strategic Storage Terminals</h4>
+                                                                                    <p>Three geographically distributed storage facilities for operational flexibility.</p>
+                                                            </div>div>
+                                                            <div class="infra-card">
+                                                                                    <h4>Marine Maintenance Facility</h4>
+                                                                                    <p>Full-service maritime support and fueling station for vessels.</p>
+                                                            </div>div>
+                                                            <div class="infra-card">
+                                                                                    <h4>University Campus</h4>
+                                                                                    <p>Memorial University petroleum engineering research and training center.</p>
+                                                            </div>div>
+                                        </div>div>
                         </div>div>
             </section>section>
     
+            <!-- Impact Section -->
             <section class="impact" id="impact">
                         <div class="container">
                                         <h2>Impact</h2>
                                         <p>Understanding the environmental, economic, and social impacts of our energy transformation initiative, including job creation and regional development.</p>
+                                        <div class="impact-grid">
+                                                            <div class="impact-card">
+                                                                                    <h3>Economic Growth</h3>
+                                                                                    <p>Projected GDP increase of 2-3% annually through infrastructure investment and export revenue.</p>
+                                                            </div>div>
+                                                            <div class="impact-card">
+                                                                                    <h3>Employment</h3>
+                                                                                    <p>Creation of 5,000+ direct jobs and 15,000+ indirect employment opportunities.</p>
+                                                            </div>div>
+                                                            <div class="impact-card">
+                                                                                    <h3>Environmental</h3>
+                                                                                    <p>Modern facilities with world-class environmental standards and carbon mitigation strategies.</p>
+                                                            </div>div>
+                                                            <div class="impact-card">
+                                                                                    <h3>Regional Development</h3>
+                                                                                    <p>Strategic investment in communities, education, and sustainable regional growth.</p>
+                                                            </div>div>
+                                        </div>div>
+                        </div>div>
+            </section>section>
+    
+            <!-- Contact Section -->
+            <section class="contact" id="contact">
+                        <div class="container">
+                                        <h2>Contact</h2>
+                                        <div class="contact-content">
+                                                            <div class="contact-info">
+                                                                                    <h3>Get in Touch</h3>
+                                                                                    <p><strong>Email:</strong> info@newfoundlandenergy.ca</p>
+                                                                                    <p><strong>Phone:</strong> +1 (709) 555-0100</p>
+                                                                                    <p><strong>Address:</strong>strong> St. John's, Newfoundland and Labrador, Canada</p>
+                                                                                    <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (AST)</p>
+                                                            </div>div>
+                                                            <form class="contact-form">
+                                                                                    <div class="form-group">
+                                                                                                                <label for="name">Full Name</label>label>
+                                                                                                                <input type="text" id="name" name="name" required>
+                                                                                      </div>div>
+                                                                                    <div class="form-group">
+                                                                                                                <label for="email">Email Address</label>label>
+                                                                                                                <input type="email" id="email" name="email" required>
+                                                                                      </div>div>
+                                                                                    <div class="form-group">
+                                                                                                                <label for="subject">Subject</label>label>
+                                                                                                                <input type="text" id="subject" name="subject" required>
+                                                                                      </div>div>
+                                                                                    <div class="form-group">
+                                                                                                                <label for="message">Message</label>label>
+                                                                                                                <textarea id="message" name="message" rows="5" required></textarea>
+                                                                                      </div>div>
+                                                                                    <button type="submit" class="btn-submit">Send Message</button>button>
+                                                            </form>form>
+                                        </div>div>
                         </div>div>
             </section>section>
     </main>
 
+    <!-- Footer -->
     <footer>
               <div class="container">
                             <div class="footer-content">
                                               <div class="footer-section">
                                                                     <h3>Contact Information</h3>
                                                                     <p>Email: info@newfoundlandenergy.ca</p>
-                                                                    <p>Phone: [Phone number will go here]</p>
-                                                                    <p>Address: [Address will go here]</p>
-                                              </div>div>
-                                              <div class="footer-section">
-                                                                    <h3>Quick Links</h3>
-                                                                    <ul>
-                                                                                              <li><a href="#home">Home</a>a></li>
-                                                                                            <li><a href="#plan">The Plan</a>a></li>
-                                                                                            <li><a href="#financials">Financials</a>a></li>
-                                                                                            <li><a href="#infrastructure">Infrastructure</a>a></li>
-                                                                                            <li><a href="#impact">Impact</a>a></li>
-                                                                    </ul>
+                                                                  <p>Phone: +1 (709) 555-0100</p>
+                                                                  <p>Address: St. John's, NL, Canada</p>
                                               </div>div>
                                             <div class="footer-section">
+                                                                <h3>Quick Links</h3>
+                                                                <ul>
+                                                                                          <li><a href="#home">Home</a>a></li>
+                                                                                        <li><a href="#plan">The Plan</a>a></li>
+                                                                                        <li><a href="#financials">Financials</a>a></li>
+                                                                                        <li><a href="#infrastructure">Infrastructure</a>a></li>
+                                                                                        <li><a href="#impact">Impact</a>a></li>
+                                                                                        <li><a href="#contact">Contact</a>a></li>
+                                                                </ul>
+                                            </div>div>
+                                            <div class="footer-section">
                                                                 <h3>Follow Us</h3>
-                                                                <p>Social media links will go here</p>
+                                                                <p>
+                                                                                          <a href="#" aria-label="LinkedIn">LinkedIn</a>a> | 
+                                                                                          <a href="#" aria-label="Twitter">Twitter</a>a> | 
+                                                                                          <a href="#" aria-label="Facebook">Facebook</a>a>
+                                                                </p>
                                             </div>div>
                             </div>div>
-                          <div class="footer-bottom">
-                                          <p>&copy; 2026 Newfoundland Energy Project. All rights reserved.</p>
-                          </div>div>
+                            <div class="footer-bottom">
+                                              <p>&copy; 2026 Newfoundland Energy Project. All rights reserved.</p>
+                            </div>div>
               </div>div>
     </footer>
 
-    <!-- Roadmap JavaScript -->
+    <!-- Modal for Infrastructure Details -->
+    <div id="infraModal" class="modal">
+            <div class="modal-content">
+                        <span class="close">&times;</span>span>
+                        <div id="modalBody"></div>div>
+            </div>div>
+    </div>div>
+
+    <!-- Scripts -->
+    <!-- Roadmap Chart -->
     <script src="roadmap.js"></script>
+    
+    <!-- Financial Charts with Scenario Selection -->
+    <script src="charts.js"></script>
+    
+    <!-- Interactive Infrastructure Map -->
+    <script src="js/map.js"></script>
 </body>
-</html>html></p></p></li></li>
-                                                                    </ul>
-    </footer></p></p>
+</html>html></p>
+                                                                </p></li></li>
+                                                                </ul></p></p>
+    </footer></strong></p></p></strong></strong></p></p>
     </main></li></li>
                                               </nav></h1>
       </header>
