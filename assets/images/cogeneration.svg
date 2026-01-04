@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <!-- SVG: Cogeneration Plant Illustration
+         Usage: Insert into modal popups or facility information cards
+         Example: <img src="assets/images/cogeneration.svg" alt="Cogeneration" style="max-width: 350px;"/>
+         Colors: Green palette (#1a472a, #2d5a3d, #a8d5ba) -->
+
+    <rect width="400" height="300" fill="#f0f4f1"/>
+    <rect y="240" width="400" height="60" fill="#a8d5ba"/>
+
+    <!-- Main generator/turbine housing -->
+    <rect x="60" y="100" width="80" height="100" fill="#2d5a3d" stroke="#1a472a" stroke-width="2" rx="5"/>
+    <circle cx="100" cy="140" r="25" fill="#a8d5ba" stroke="#1a472a" stroke-width="2"/>
+    <path d="M 100 115 L 115 140 L 100 165 L 85 140 Z" fill="#1a472a"/>
+    <circle cx="100" cy="140" r="15" fill="#f0f4f1"/>
+
+    <!-- Turbine blades -->
+    <line x1="100" y1="125" x2="100" y2="100" stroke="#1a472a" stroke-width="3"/>
+    <line x1="115" y1="140" x2="135" y2="140" stroke="#1a472a" stroke-width="3"/>
+    <line x1="100" y1="155" x2="100" y2="180" stroke="#1a472a" stroke-width="3"/>
+    <line x1="85" y1="140" x2="65" y2="140" stroke="#1a472a" stroke-width="3"/>
+
+    <!-- Heat recovery unit -->
+    <rect x="180" y="100" width="70" height="90" fill="#a8d5ba" stroke="#1a472a" stroke-width="2"/>
+    <rect x="190" y="110" width="10" height="70" fill="#1a472a"/>
+    <rect x="210" y="110" width="10" height="70" fill="#1a472a"/>
+    <rect x="230" y="110" width="10" height="70" fill="#1a472a"/>
+    <!-- Heat flow lines -->
+    <path d="M 155 130 Q 170 130 180 130" stroke="#e74c3c" stroke-width="2" fill="none"/>
+    <circle cx="160" cy="128" r="2" fill="#e74c3c"/>
+
+    <!-- Hot water pipes -->
+    <circle cx="200" cy="200" r="15" fill="#e74c3c" stroke="#1a472a" stroke-width="2"/>
+    <text x="200" y="207" font-size="12" fill="white" text-anchor="middle" font-weight="bold">H₂O</text>
+
+    <circle cx="260" cy="200" r="15" fill="#27ae60" stroke="#1a472a" stroke-width="2"/>
+    <text x="260" y="207" font-size="10" fill="white" text-anchor="middle" font-weight="bold">ELC</text>
+
+    <!-- Connecting pipes -->
+    <rect x="165" y="195" width="35" height="10" fill="#1a472a"/>
+    <rect x="215" y="195" width="45" height="10" fill="#1a472a"/>
+
+    <!-- Emission stack -->
+    <rect x="310" y="80" width="25" height="120" fill="#2d5a3d" stroke="#1a472a" stroke-width="2"/>
+    <circle cx="322.5" cy="70" r="8" fill="#a8d5ba"/>
+    <circle cx="325" cy="60" r="5" fill="#2d5a3d" opacity="0.6"/>
+
+    <!-- Control panel -->
+    <rect x="60" y="210" width="40" height="25" fill="#1a472a" stroke="#a8d5ba" stroke-width="1"/>
+    <circle cx="70" cy="218" r="2" fill="#a8d5ba"/>
+    <circle cx="80" cy="218" r="2" fill="#a8d5ba"/>
+    <circle cx="90" cy="218" r="2" fill="#a8d5ba"/>
+    <circle cx="70" cy="228" r="2" fill="#27ae60"/>
+    <circle cx="80" cy="228" r="2" fill="#27ae60"/>
+
+    <!-- Foundation -->
+    <rect x="40" y="235" width="240" height="8" fill="#1a472a" stroke="#a8d5ba" stroke-width="1"/>
+</svg>
