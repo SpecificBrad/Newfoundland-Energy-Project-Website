@@ -1,379 +1,542 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Newfoundland Energy Transformation</title>
-        <!-- Tailwind CSS CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Chart.js CDN - Load first before custom scripts -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.0/dist/chart.umd.min.js"></script>
-        <!-- Leaflet.js CDN for Interactive Map -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
-    </head>
-<body class="bg-white font-sans">
 
-    <!-- Header Section - Sticky Navigation with Tailwind -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-            <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-                        <!-- Logo -->
-                        <div class="flex items-center space-x-2">
-                                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                                            <span class="text-white font-bold text-lg">E</span>span>
-                                        </div>div>
-                                        <h1 class="text-2xl font-bold text-gray-900">Newfoundland Energy</h1>h1>
-                        </div>div>
-                        
-                        <!-- Navigation Menu -->
-                        <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>a>
-                                        <a href="#plan" class="text-gray-600 hover:text-blue-600 transition">The Plan</a>a>
-                                        <a href="#financials" class="text-gray-600 hover:text-blue-600 transition">Financials</a>a>
-                                        <a href="#infrastructure" class="text-gray-600 hover:text-blue-600 transition">Infrastructure</a>a>
-                                        <a href="#impact" class="text-gray-600 hover:text-blue-600 transition">Impact</a>a>
-                                        <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>a>
-                        </nav>nav>
-                        
-                        <!-- CTA Button -->
-                        <button class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition">Get Started</button>button>
-            </div>div>
-    </header>header>
+<html lang="en">
+
+    <head>
+
+            <meta charset="UTF-8">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <title>Newfoundland Energy Transformation</title>
+    
+    
+    
+    
+        <!-- Main Stylesheet -->
+    
+        <link rel="stylesheet" href="style.css">
+    
+    
+    
+    
+        <!-- Chart.js CDN -->
+    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    
+    
+    
+        <!-- Leaflet.js CDN for Interactive Map -->
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+    
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+    
+    </head>
+
+<body>
+
+        <!-- Header Navigation -->
+
+        <header>
+
+                    <div class="container">
+
+                                    <div class="header-content">
+
+                                                        <h1>Newfoundland Energy Transformation</h1>
+                                    
+                                                    <nav>
+
+                                                                            <ul class="nav-menu">
+
+                                                                                                        <li><a href="#home">Home</a>a></li>
+                                                                            
+                                                                                                    <li><a href="#plan">The Plan</a>a></li>
+                                                                            
+                                                                                                    <li><a href="#financials">Financials</a>a></li>
+                                                                            
+                                                                                                    <li><a href="#infrastructure">Infrastructure</a>a></li>
+                                                                            
+                                                                                                    <li><a href="#impact">Impact</a>a></li>
+                                                                            
+                                                                                                    <li><a href="#contact">Contact</a>a></li>
+                                                                            
+                                                                            </ul>ul>
+                                                    
+                                                    </nav>
+                                    
+                                    </div>div>
+                    
+                    </div>div>
+        
+        </header>
+
+
+
 
     <!-- Main Content -->
+
     <main>
+
                 <!-- Hero Section: 20-Year Roadmap -->
-                <section class="hero" id="home" class="py-20 bg-gradient-to-br from-blue-50 to-white">
-                                <div class="container mx-auto px-4">
-                                                    <div class="hero-content mb-12">
-                                                                            <h2 class="text-5xl font-bold text-gray-900 mb-4">20-Year Energy Roadmap</h2>h2>
-                                                                            <p class="text-xl text-gray-600 max-w-2xl">Building a Sustainable Energy Future for Newfoundland: Transforming our energy infrastructure over the next two decades</p>p>
+
+                <section class="hero" id="home">
+
+                                <div class="container">
+
+                                                    <div class="hero-content">
+
+                                                                            <h2>20-Year Energy Roadmap</h2>
+
+                                                                            <p class="hero-subtitle">Building a Sustainable Energy Future for Newfoundland</p>p>
+
+                                                                            <div id="roadmapContainer" class="roadmap-container">
+
+                                                                                                        <canvas id="roadmapChart"></canvas>canvas>
+
+                                                                                </div>div>
+
                                                     </div>div>
 
-                                                    <!-- Roadmap Chart Container -->
-                                                    <div id="roadmapContainer" class="roadmap-container bg-white rounded-xl shadow-lg p-8">
-                                                                            <canvas id="roadmapChart"></canvas>canvas>
-                                                    </div>div>
                                 </div>div>
+
                 </section>section>
 
-                <!-- The Plan Section: Strategy Cards -->
-                <section class="intro" id="plan" class="py-20 bg-gray-50">
-                                <div class="container mx-auto px-4">
-                                                    <h2 class="text-4xl font-bold text-gray-900 mb-4">The Plan</h2>h2>
-                                                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Our comprehensive strategy to transform Newfoundland's energy sector over the next 20 years through renewable energy development, infrastructure modernization, and economic diversification.</p>p>
 
-                                                    <!-- Strategy Cards Grid -->
-                                                    <div class="phases-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                                                            <!-- Phase 1 Card -->
-                                                                            <div class="phase-card bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-600">
-                                                                                                        <div class="text-sm font-semibold text-blue-600 mb-2">PHASE 1</div>div>
-                                                                                                        <h3 class="text-lg font-bold text-gray-900 mb-3">Assessment & Planning</h3>h3>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Comprehensive energy audit and stakeholder engagement to establish baseline conditions and future vision.</p>p>
-                                                                                                        <div class="text-xs text-gray-500">Years 1-2</div>div>
-                                                                                </div>div>
 
-                                                                            <!-- Phase 2 Card -->
-                                                                            <div class="phase-card bg-white rounded-lg p-6 shadow-md border-l-4 border-green-600">
-                                                                                                        <div class="text-sm font-semibold text-green-600 mb-2">PHASE 2</div>div>
-                                                                                                        <h3 class="text-lg font-bold text-gray-900 mb-3">Wind Infrastructure</h3>h3>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Development of offshore and onshore wind farms to harness Newfoundland's abundant wind resources.</p>p>
-                                                                                                        <div class="text-xs text-gray-500">Years 2-5</div>div>
-                                                                                </div>div>
 
-                                                                            <!-- Phase 3 Card -->
-                                                                            <div class="phase-card bg-white rounded-lg p-6 shadow-md border-l-4 border-purple-600">
-                                                                                                        <div class="text-sm font-semibold text-purple-600 mb-2">PHASE 3</div>div>
-                                                                                                        <h3 class="text-lg font-bold text-gray-900 mb-3">Grid Modernization</h3>h3>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Smart grid implementation and energy storage solutions for reliable renewable energy distribution.</p>p>
-                                                                                                        <div class="text-xs text-gray-500">Years 5-10</div>div>
-                                                                                </div>div>
+                <!-- The Plan Section -->
 
-                                                                            <!-- Phase 4 Card -->
-                                                                            <div class="phase-card bg-white rounded-lg p-6 shadow-md border-l-4 border-orange-600">
-                                                                                                        <div class="text-sm font-semibold text-orange-600 mb-2">PHASE 4</div>div>
-                                                                                                        <h3 class="text-lg font-bold text-gray-900 mb-3">Full Transition</h3>h3>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Complete transition to renewable energy with economic diversification and export opportunities.</p>p>
-                                                                                                        <div class="text-xs text-gray-500">Years 10-20</div>div>
-                                                                                </div>div>
-                                                    </div>div>
+                <section class="intro" id="plan">
+
+                                <div class="container">
+
+                                                    <h2>The Plan</h2>
+
+                                                    <p>Our comprehensive strategy to transform Newfoundland's energy sector over the next two decades, encompassing debt repayment, infrastructure expansion, and technology integration.</p>
+                                
+                                                <div class="phases-grid">
+                                                
+                                                                    <div class="phase-card">
+                                                                    
+                                                                                            <h3>Debt Repayment</h3>
+                                                                    
+                                                                                            <p>Years 1-5: Strategic financial management to reduce initial project debt obligations.</p>
+                                                                    
+                                                                    </div>div>
+                                                
+                                                                    <div class="phase-card">
+                                                                    
+                                                                                            <h3>Infrastructure Expansion</h3>
+                                                                    
+                                                                                            <p>Years 3-12: Significant capital investment in pipelines, terminals, and facilities.</p>
+                                                                    
+                                                                    </div>div>
+                                                
+                                                                    <div class="phase-card">
+                                                                    
+                                                                                            <h3>Technology Integration</h3>
+                                                                    
+                                                                                            <p>Years 5-15: Cutting-edge technology adoption for efficiency and sustainability.</p>
+                                                                    
+                                                                    </div>div>
+                                                
+                                                                    <div class="phase-card">
+                                                                    
+                                                                                            <h3>Market Expansion</h3>
+                                                                    
+                                                                                            <p>Years 10-20: Strategic global market positioning and revenue optimization.</p>
+                                                                    
+                                                                    </div>div>
+                                                
+                                                </div>div>
+                                
                                 </div>div>
+                
                 </section>section>
-
-                <!-- Financials Section: Charts & Summary Cards -->
-                <section class="financials" id="financials" class="py-20 bg-white">
-                                <div class="container mx-auto px-4">
-                                                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Financials</h2>h2>
-                                                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Detailed financial projections showing investment requirements, cost savings, and revenue potential from energy exports.</p>p>
-
-                                                    <!-- Scenario Selector -->
-                                                    <div class="mb-8 flex flex-col sm:flex-row items-center gap-4">
-                                                                            <label class="text-gray-700 font-semibold">Select Scenario:</label>label>
-                                                                            <select id="scenarioSelector" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600 bg-white">
-                                                                                                        <option value="conservative">Conservative</option>option>
-                                                                                                        <option value="moderate" selected>Moderate</option>option>
-                                                                                                        <option value="aggressive">Aggressive</option>option>
-                                                                                </select>select>
-                                                    </div>div>
-
-                                                    <!-- Financial Chart Container -->
-                                                    <div class="mb-12 bg-gray-50 rounded-xl shadow-lg p-8">
-                                                                            <canvas id="financialChart"></canvas>canvas>
-                                                    </div>div>
-
-                                                    <!-- Summary Cards -->
-                                                    <div class="summary-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                                                            <!-- Total Investment Card -->
-                                                                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 shadow-md border-b-4 border-blue-600">
-                                                                                                        <h4 class="text-gray-700 text-sm font-semibold mb-2">TOTAL INVESTMENT</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-blue-600 mb-2">$45.2B</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Over 20-year period</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Operating Savings Card -->
-                                                                            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 shadow-md border-b-4 border-green-600">
-                                                                                                        <h4 class="text-gray-700 text-sm font-semibold mb-2">ANNUAL SAVINGS</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-green-600 mb-2">$2.1B</p>p>
-                                                                                                        <p class="text-sm text-gray-700">By year 15</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Export Revenue Card -->
-                                                                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 shadow-md border-b-4 border-purple-600">
-                                                                                                        <h4 class="text-gray-700 text-sm font-semibold mb-2">EXPORT REVENUE</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-purple-600 mb-2">$3.8B</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Annual potential</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Job Creation Card -->
-                                                                            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 shadow-md border-b-4 border-orange-600">
-                                                                                                        <h4 class="text-gray-700 text-sm font-semibold mb-2">JOBS CREATED</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-orange-600 mb-2">18,500</p>p>
-                                                                                                        <p class="text-sm text-gray-700">New permanent positions</p>p>
-                                                                                </div>div>
-                                                    </div>div>
-                                </div>div>
-                </section>section>
-
-                <!-- Infrastructure Section: Map & Facility Cards -->
-                <section class="infrastructure" id="infrastructure" class="py-20 bg-gray-50">
-                                <div class="container mx-auto px-4">
-                                                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Infrastructure</h2>h2>
-                                                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Strategic locations for wind farms, hydro facilities, and grid infrastructure across Newfoundland and Labrador.</p>p>
-
-                                                    <!-- Interactive Map -->
-                                                    <div id="infrastructureMap" class="infrastructure-map rounded-xl shadow-lg overflow-hidden mb-12" style="height: 500px;"></div>div>
-
-                                                    <!-- Facility Cards -->
-                                                    <div class="facility-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                                                            <!-- Wind Farm Card -->
-                                                                            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition">
-                                                                                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                                                                                                                                        <span class="text-2xl">💨</span>span>
-                                                                                                            </div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Wind Farms</h4>h4>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">15 offshore and onshore wind farms generating 8,500 MW capacity</p>p>
-                                                                                                        <div class="text-xs font-semibold text-blue-600">15 Locations</div>div>
-                                                                                </div>div>
-
-                                                                            <!-- Hydro Facility Card -->
-                                                                            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition">
-                                                                                                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                                                                                                                                        <span class="text-2xl">💧</span>span>
-                                                                                                            </div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Hydro Facilities</h4>h4>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Upgraded hydro systems providing 3,200 MW baseload power</p>p>
-                                                                                                        <div class="text-xs font-semibold text-green-600">12 Locations</div>div>
-                                                                                </div>div>
-
-                                                                            <!-- Battery Storage Card -->
-                                                                            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition">
-                                                                                                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                                                                                                                                        <span class="text-2xl">🔋</span>span>
-                                                                                                            </div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Energy Storage</h4>h4>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Advanced battery systems storing 2,000 MWh of clean energy</p>p>
-                                                                                                        <div class="text-xs font-semibold text-purple-600">8 Locations</div>div>
-                                                                                </div>div>
-
-                                                                            <!-- Grid Hub Card -->
-                                                                            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition">
-                                                                                                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                                                                                                                                        <span class="text-2xl">🔌</span>span>
-                                                                                                            </div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Grid Hubs</h4>h4>
-                                                                                                        <p class="text-gray-700 text-sm mb-4">Smart grid control centers managing energy distribution</p>p>
-                                                                                                        <div class="text-xs font-semibold text-orange-600">6 Locations</div>div>
-                                                                                </div>div>
-                                                    </div>div>
-                                </div>div>
-                </section>section>
-
-                <!-- Impact Section: Key Metrics Cards -->
-                <section class="impact" id="impact" class="py-20 bg-white">
-                                <div class="container mx-auto px-4">
-                                                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Impact</h2>h2>
-                                                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Transforming Newfoundland into a global clean energy leader with significant environmental and economic benefits.</p>p>
-
-                                                    <!-- Impact Cards -->
-                                                    <div class="impact-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                                                            <!-- Carbon Reduction Card -->
-                                                                            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 shadow-md">
-                                                                                                        <div class="text-4xl mb-3">🌍</div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Carbon Reduction</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-green-600 mb-2">45M</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Metric tons CO2 avoided annually</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Clean Energy Card -->
-                                                                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 shadow-md">
-                                                                                                        <div class="text-4xl mb-3">⚡</div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Clean Energy</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-blue-600 mb-2">100%</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Renewable energy generation</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Economic Growth Card -->
-                                                                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 shadow-md">
-                                                                                                        <div class="text-4xl mb-3">📈</div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Economic Growth</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-purple-600 mb-2">$89B</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Total economic impact</p>p>
-                                                                                </div>div>
-
-                                                                            <!-- Innovation Leadership Card -->
-                                                                            <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 shadow-md">
-                                                                                                        <div class="text-4xl mb-3">🚀</div>div>
-                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">Innovation Leader</h4>h4>
-                                                                                                        <p class="text-3xl font-bold text-orange-600 mb-2">#1</p>p>
-                                                                                                        <p class="text-sm text-gray-700">Clean energy technology hub</p>p>
-                                                                                </div>div>
-                                                    </div>div>
-                                </div>div>
-                </section>section>
-
-                <!-- Contact Section: Form & Information -->
-                <section class="contact" id="contact" class="py-20 bg-gray-50">
-                                <div class="container mx-auto px-4">
-                                                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>h2>
-                                                    <p class="text-xl text-gray-600 mb-12 max-w-3xl">Have questions about the Newfoundland Energy Transformation project? Contact our team.</p>p>
-
-                                                    <!-- Contact Grid -->
-                                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                                                                            <!-- Contact Form -->
-                                                                            <div class="bg-white rounded-lg p-8 shadow-lg">
-                                                                                                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>h3>
-                                                                                                        <form id="contactForm" class="space-y-4">
-                                                                                                                                        <div>
-                                                                                                                                                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Name</label>label>
-                                                                                                                                                                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Your name" required>
-                                                                                                                                            </div>
-                                                                                                                                        <div>
-                                                                                                                                                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>label>
-                                                                                                                                                                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="your@email.com" required>
-                                                                                                                                            </div>
-                                                                                                                                        <div>
-                                                                                                                                                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>label>
-                                                                                                                                                                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Your subject" required>
-                                                                                                                                            </div>
-                                                                                                                                        <div>
-                                                                                                                                                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>label>
-                                                                                                                                                                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Your message" required></textarea>
-                                                                                                                                            </div>
-                                                                                                                                        <button type="submit" class="w-full bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition">Send Message</button>button>
-                                                                                                            </form>form>
-                                                                                </div>
-
-                                                                            <!-- Contact Information -->
-                                                                            <div class="space-y-8">
-                                                                                                        <div class="bg-white rounded-lg p-6 shadow-lg">
-                                                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">📍 Location</h4>h4>
-                                                                                                                                        <p class="text-gray-700">St. John's, Newfoundland and Labrador, Canada</p>p>
-                                                                                                            </div>
-                                                                                                        <div class="bg-white rounded-lg p-6 shadow-lg">
-                                                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">📧 Email</h4>h4>
-                                                                                                                                        <p class="text-gray-700">info@newfoundland-energy.ca</p>p>
-                                                                                                            </div>
-                                                                                                        <div class="bg-white rounded-lg p-6 shadow-lg">
-                                                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">📞 Phone</h4>h4>
-                                                                                                                                        <p class="text-gray-700">+1 (709) 555-0100</p>p>
-                                                                                                            </div>
-                                                                                                        <div class="bg-white rounded-lg p-6 shadow-lg">
-                                                                                                                                        <h4 class="text-lg font-bold text-gray-900 mb-2">🕐 Hours</h4>h4>
-                                                                                                                                        <p class="text-gray-700">Monday - Friday: 9:00 AM - 5:00 PM</p>p>
-                                                                                                                                        <p class="text-gray-700">Saturday - Sunday: Closed</p>p>
-                                                                                                            </div>
-                                                                                </div>
-                                                    </div>
-                                </div>
-                </section>section>
+    
+    
+    
+    
+            <!-- Financials Section -->
+    
+            <section class="financials" id="financials">
+            
+                        <div class="container">
+                        
+                                        <h2>Financials</h2>
+                        
+                                        <p>Detailed financial projections and investment opportunities for the Newfoundland Energy Transformation project, with transparent cost and revenue impact analysis.</p>
+                        
+                        
+                        
+                        
+                                        <div class="scenario-controls">
+                                        
+                                                            <label for="scenarioSelect">Market Capture Scenario:</label>label>
+                                        
+                                                            <select id="scenarioSelect" class="scenario-selector">
+                                                            
+                                                                                    <option value="50">50% Market Capture</option>option>
+                                                            
+                                                                                    <option value="75" selected>75% Market Capture</option>option>
+                                                            
+                                                                                    <option value="100">100% Market Capture</option>option>
+                                                            
+                                                            </select>select>
+                                        
+                                        </div>div>
+                        
+                        
+                        
+                        
+                                        <div class="chart-container">
+                                        
+                                                            <canvas id="financialChart"></canvas>canvas>
+                                        
+                                        </div>div>
+                        
+                        
+                        
+                        
+                                        <div class="financial-summary" id="financialSummary">
+                                        
+                                                            <div class="summary-card">
+                                                            
+                                                                                    <h4>Total Revenue (20 Years)</h4>
+                                                            
+                                                                                    <p id="totalRevenue" class="metric">$0M</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="summary-card">
+                                                            
+                                                                                    <h4>Total Costs</h4>
+                                                            
+                                                                                    <p id="totalCosts" class="metric">$0M</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="summary-card">
+                                                            
+                                                                                    <h4>Net Profit</h4>
+                                                            
+                                                                                    <p id="netProfit" class="metric">$0M</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="summary-card">
+                                                            
+                                                                                    <h4>ROI</h4>
+                                                            
+                                                                                    <p id="roi" class="metric">0%</p>
+                                                            
+                                                            </div>div>
+                                        
+                                        </div>div>
+                        
+                        </div>div>
+            
+            </section>section>
+    
+    
+    
+    
+            <!-- Infrastructure Section -->
+    
+            <section class="infrastructure" id="infrastructure">
+            
+                        <div class="container">
+                        
+                                        <h2>Infrastructure</h2>
+                        
+                                        <p>Key infrastructure developments and projects supporting our energy transformation goals, including pipeline completion, marine facilities, and storage expansion.</p>
+                        
+                                        <div id="infrastructureMap" class="infrastructure-map"></div>div>
+                        
+                        
+                        
+                        
+                                        <div class="infrastructure-details">
+                                        
+                                                            <div class="infra-card">
+                                                            
+                                                                                    <h4>Come By Chance Refinery</h4>
+                                                            
+                                                                                    <p>Primary crude oil refinery with advanced processing capabilities.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="infra-card">
+                                                            
+                                                                                    <h4>Strategic Storage Terminals</h4>
+                                                            
+                                                                                    <p>Three geographically distributed storage facilities for operational flexibility.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="infra-card">
+                                                            
+                                                                                    <h4>Marine Maintenance Facility</h4>
+                                                            
+                                                                                    <p>Full-service maritime support and fueling station for vessels.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="infra-card">
+                                                            
+                                                                                    <h4>University Campus</h4>
+                                                            
+                                                                                    <p>Memorial University petroleum engineering research and training center.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                        </div>div>
+                        
+                        </div>div>
+            
+            </section>section>
+    
+    
+    
+    
+            <!-- Impact Section -->
+    
+            <section class="impact" id="impact">
+            
+                        <div class="container">
+                        
+                                        <h2>Impact</h2>
+                        
+                                        <p>Understanding the environmental, economic, and social impacts of our energy transformation initiative, including job creation and regional development.</p>
+                        
+                                        <div class="impact-grid">
+                                        
+                                                            <div class="impact-card">
+                                                            
+                                                                                    <h3>Economic Growth</h3>
+                                                            
+                                                                                    <p>Projected GDP increase of 2-3% annually through infrastructure investment and export revenue.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="impact-card">
+                                                            
+                                                                                    <h3>Employment</h3>
+                                                            
+                                                                                    <p>Creation of 5,000+ direct jobs and 15,000+ indirect employment opportunities.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="impact-card">
+                                                            
+                                                                                    <h3>Environmental</h3>
+                                                            
+                                                                                    <p>Modern facilities with world-class environmental standards and carbon mitigation strategies.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                                            <div class="impact-card">
+                                                            
+                                                                                    <h3>Regional Development</h3>
+                                                            
+                                                                                    <p>Strategic investment in communities, education, and sustainable regional growth.</p>
+                                                            
+                                                            </div>div>
+                                        
+                                        </div>div>
+                        
+                        </div>div>
+            
+            </section>section>
+    
+    
+    
+    
+            <!-- Contact Section -->
+    
+            <section class="contact" id="contact">
+            
+                        <div class="container">
+                        
+                                        <h2>Contact</h2>
+                        
+                                        <div class="contact-content">
+                                        
+                                                            <div class="contact-info">
+                                                            
+                                                                                    <h3>Get in Touch</h3>
+                                                            
+                                                                                    <p><strong>Email:</strong> info@newfoundlandenergy.ca</p>
+                                                            
+                                                                                    <p><strong>Phone:</strong> +1 (709) 555-0100</p>
+                                                            
+                                                                                    <p><strong>Address:</strong>strong> St. John's, Newfoundland and Labrador, Canada</p>
+                                                            
+                                                                                    <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (AST)</p>
+                                                            
+                                                            </div>div>
+                                        
+                                        
+                                        
+                                        
+                                                            <form class="contact-form">
+                                                            
+                                                                                    <div class="form-group">
+                                                                                    
+                                                                                                                <label for="name">Full Name</label>label>
+                                                                                    
+                                                                                                                <input type="text" id="name" name="name" required>
+                                                                                    
+                                                                                        </div>div>
+                                                            
+                                                                                    <div class="form-group">
+                                                                                    
+                                                                                                                <label for="email">Email Address</label>label>
+                                                                                    
+                                                                                                                <input type="email" id="email" name="email" required>
+                                                                                    
+                                                                                        </div>div>
+                                                            
+                                                                                    <div class="form-group">
+                                                                                    
+                                                                                                                <label for="subject">Subject</label>label>
+                                                                                    
+                                                                                                                <input type="text" id="subject" name="subject" required>
+                                                                                    
+                                                                                        </div>div>
+                                                            
+                                                                                    <div class="form-group">
+                                                                                    
+                                                                                                                <label for="message">Message</label>label>
+                                                                                    
+                                                                                                                <textarea id="message" name="message" rows="5" required></textarea>
+                                                                                    
+                                                                                        </div>div>
+                                                            
+                                                                                    <button type="submit" class="btn-submit">Send Message</button>button>
+                                                            
+                                                            </form>form>
+                                        
+                                        </div>div>
+                        
+                        </div>div>
+            
+            </section>section>
+    
     </main>
 
-        <!-- Footer Section -->
-        <footer class="bg-gray-950 text-white py-12">
-                    <div class="container mx-auto px-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                                                        <!-- Company Info -->
-                                                        <div>
-                                                                                <h4 class="text-lg font-bold mb-4">Newfoundland Energy</h4>h4>
-                                                                                <p class="text-gray-400 text-sm">Transforming our province into a global clean energy leader.</p>p>
-                                                        </div>
 
-                                                        <!-- Quick Links -->
-                                                        <div>
-                                                                                <h4 class="text-lg font-bold mb-4">Quick Links</h4>h4>
-                                                                                <ul class="space-y-2 text-sm">
-                                                                                                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a>a></li>
-                                                                                                        <li><a href="#plan" class="text-gray-400 hover:text-white transition">The Plan</a>a></li>
-                                                                                                        <li><a href="#financials" class="text-gray-400 hover:text-white transition">Financials</a>a></li>
-                                                                                                        <li><a href="#infrastructure" class="text-gray-400 hover:text-white transition">Infrastructure</a>a></li>
-                                                                                    </ul>ul>
-                                                        </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+                <div class="container">
+
+                                <div class="footer-content">
+
+                                                    <div class="footer-section">
+
+                                                                            <h3>Contact Information</h3>
+
+                                                                            <p>Email: info@newfoundlandenergy.ca</p>
                                                     
-                                                    <!-- Resources -->
-                                                    <div>
-                                                                        <h4 class="text-lg font-bold mb-4">Resources</h4>h4>
-                                                                        <ul class="space-y-2 text-sm">
-                                                                                                <li><a href="#impact" class="text-gray-400 hover:text-white transition">Impact</a>a></li>
-                                                                                                <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>a></li>
-                                                                                                <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>a></li>
-                                                                                                <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>a></li>
-                                                                        </ul>ul>
-                                                    </div>
+                                                                        <p>Phone: +1 (709) 555-0100</p>
                                                     
-                                                    <!-- Contact Info -->
-                                                    <div>
-                                                                        <h4 class="text-lg font-bold mb-4">Contact</h4>h4>
-                                                                        <p class="text-gray-400 text-sm mb-2">info@newfoundland-energy.ca</p>p>
-                                                                        <p class="text-gray-400 text-sm">+1 (709) 555-0100</p>p>
-                                                    </div>
-                                    </div>
+                                                                        <p>Address: St. John's, NL, Canada</p>
+                                                    
+                                                    </div>div>
                                 
-                                <!-- Footer Bottom -->
-                                <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                                                <p>&copy; 2025 Newfoundland Energy Transformation. All rights reserved.</p>
-                                </div>
-                    </div>
-        </footer>footer>
+                                                <div class="footer-section">
+                                                
+                                                                    <h3>Quick Links</h3>
+                                                
+                                                                    <ul>
 
-    <!-- JavaScript Files - Load after all DOM elements and external libraries are ready -->
-    <!-- Ensure Chart.js and Leaflet are loaded before custom scripts -->
-    <script src="roadmap.js"></script>
-    <script src="charts.js"></script>
-    <script src="js/map.js"></script>
+                                                                                                <li><a href="#home">Home</a>a></li>
+                                                                    
+                                                                                            <li><a href="#plan">The Plan</a>a></li>
+                                                                    
+                                                                                            <li><a href="#financials">Financials</a>a></li>
+                                                                    
+                                                                                            <li><a href="#infrastructure">Infrastructure</a>a></li>
+                                                                    
+                                                                                            <li><a href="#impact">Impact</a>a></li>
+                                                                    
+                                                                                            <li><a href="#contact">Contact</a>a></li>
+                                                                    
+                                                                    </ul>
+                                                
+                                                </div>div>
+                                
+                                                <div class="footer-section">
+                                                
+                                                                    <h3>Follow Us</h3>
+                                                
+                                                                    <p>
+
+                                                                                                <a href="#" aria-label="LinkedIn">LinkedIn</a>a> |
+
+                                                                                                <a href="#" aria-label="Twitter">Twitter</a>a> |
+
+                                                                                                <a href="#" aria-label="Facebook">Facebook</a>a>
+
+                                                                    </p>
+
+                                                </div>div>
+
+                                </div>div>
+
+                                <div class="footer-bottom">
+
+                                                    <p>&copy; 2026 Newfoundland Energy Project. All rights reserved.</p>
+                                
+                                </div>div>
+                
+                </div>div>
     
-    <!-- Contact Form Handler -->
-    <script>
-                document.getElementById('contactForm').addEventListener('submit', function(e) {
-                                e.preventDefault();
-                                // Form submission logic
-                                alert('Thank you for your message! We will get back to you soon.');
-                                this.reset();
-                });
-    </script>
-</body>body>
-</html>html>
-    </script></p></li></li>
-                                                                                                                                        </div>
-                                                                                                                                        </div>
-    </main></title>
+    </footer>
+
+
+
+
+    <!-- Modal for Infrastructure Details -->
+
+    <div id="infraModal" class="modal">
+    
+            <div class="modal-content">
+            
+                        <span class="close">&times;</span>span>
+            
+                        <div id="modalBody"></div>div>
+            
+            </div>div>
+    
+    </div>div>
+
+
+
+
+    <!-- Scripts -->
+
+    <script src="roadmap.js"></script>
+
+    <script src="charts.js"></script>
+
+    <script src="js/map.js"></script>
+
+</body>
+
+</html>html></p>
+                                                                    </p></li></li>
+                                                                    </ul></p></p>
+    </footer></strong></p></p></strong></strong></p></p>
+    </main></li></li>
+                                                    </nav></h1>
+        </header>
+</body></title>
     </head>
