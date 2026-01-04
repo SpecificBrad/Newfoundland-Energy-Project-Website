@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Newfoundland Energy Transformation</title>
       <link rel="stylesheet" href="style.css">
+      <!-- Chart.js CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   </head>
 <body>
       <header>
@@ -31,8 +33,9 @@
                                               <div class="hero-content">
                                                                     <h2>20-Year Energy Roadmap</h2>
                                                                     <p class="hero-subtitle">Building a Sustainable Energy Future for Newfoundland</p>p>
-                                                                    <div class="roadmap-placeholder">
-                                                                                              [Roadmap will go here]
+                                                                    <div id="roadmapContainer" class="roadmap-container">
+                                                                                              <!-- Chart will be inserted here -->
+                                                                                              <canvas id="roadmapChart"></canvas>canvas>
                                                                     </div>div>
                                               </div>div>
                             </div>div>
@@ -41,28 +44,28 @@
               <section class="intro" id="plan">
                             <div class="container">
                                               <h2>The Plan</h2>
-                                              <p>Our comprehensive strategy to transform Newfoundland's energy sector over the next two decades.</p>
+                                              <p>Our comprehensive strategy to transform Newfoundland's energy sector over the next two decades, encompassing debt repayment, infrastructure expansion, and technology integration.</p>
                             </div>div>
               </section>section>
     
             <section class="financials" id="financials">
                         <div class="container">
                                         <h2>Financials</h2>
-                                        <p>Detailed financial projections and investment opportunities for the Newfoundland Energy Transformation project.</p>
+                                        <p>Detailed financial projections and investment opportunities for the Newfoundland Energy Transformation project, with transparent cost and revenue impact analysis.</p>
                         </div>div>
             </section>section>
     
             <section class="infrastructure" id="infrastructure">
                         <div class="container">
                                         <h2>Infrastructure</h2>
-                                        <p>Key infrastructure developments and projects supporting our energy transformation goals.</p>
+                                        <p>Key infrastructure developments and projects supporting our energy transformation goals, including pipeline completion, marine facilities, and storage expansion.</p>
                         </div>div>
             </section>section>
     
             <section class="impact" id="impact">
                         <div class="container">
                                         <h2>Impact</h2>
-                                        <p>Understanding the environmental, economic, and social impacts of our energy transformation initiative.</p>
+                                        <p>Understanding the environmental, economic, and social impacts of our energy transformation initiative, including job creation and regional development.</p>
                         </div>div>
             </section>section>
     </main>
@@ -96,6 +99,9 @@
                           </div>div>
               </div>div>
     </footer>
+
+    <!-- Roadmap JavaScript -->
+    <script src="roadmap.js"></script>
 </body>
 </html>html></p></p></li></li>
                                                                     </ul>
